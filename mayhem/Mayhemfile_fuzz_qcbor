@@ -1,0 +1,9 @@
+project: savantenvs/optee_os
+target: fuzz_qcbor
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_qcbor/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_qcbor
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_qcbor/fuzz_qcbor.dict

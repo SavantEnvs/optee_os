@@ -1,0 +1,9 @@
+project: savantenvs/optee_os
+target: fuzz_x509crt
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_x509crt/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_x509crt
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_x509crt/fuzz_x509crt.dict
